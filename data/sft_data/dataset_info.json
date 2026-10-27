@@ -1,0 +1,32 @@
+{
+  "atomic_desft_data": {
+    "file_name": "atomic_desft_data.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "claim_desft_data": {
+    "file_name": "claim_desft_data.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "folio_desft_data": {
+    "file_name": "folio_desft_data.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    }
+  }
+}
