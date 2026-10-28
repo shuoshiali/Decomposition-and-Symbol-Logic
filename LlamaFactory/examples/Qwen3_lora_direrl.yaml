@@ -1,0 +1,45 @@
+### model
+model_name_or_path: saves/Qwen3-8B_desft
+trust_remote_code: true
+
+### method
+stage: grpo
+do_train: true
+finetuning_type: lora
+lora_rank: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target: all
+
+### DiReRL / GRPO
+grpo_prompt_file: data/grpo_prompts_tree.json
+grpo_teacher_file: data/FOLIO_ALL_DepSampling.json
+grpo_num_generations: 8
+grpo_beta: 0.02
+grpo_temperature: 1.0
+grpo_max_prompt_length: 2048
+grpo_max_completion_length: 1024
+grpo_loss_type: dr_grpo
+grpo_use_vllm: false
+grpo_vllm_mode: colocate
+grpo_vllm_gpu_mem: 0.25
+dire_reward_w_atomic: 0.4
+dire_reward_w_symbolic: 0.6
+dire_reward_use_llm_fallback: false
+dire_reward_dense_fallback: 0.3
+
+### output
+output_dir: saves/Qwen3-8B/lora/desft_direrl
+logging_steps: 5
+save_steps: 50
+overwrite_output_dir: true
+report_to: none
+
+### train
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-6
+num_train_epochs: 1.0
+lr_scheduler_type: constant_with_warmup
+warmup_steps: 0.05
+bf16: true
